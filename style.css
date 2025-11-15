@@ -1,3 +1,39 @@
+@keyframes animateCounterBoxFailure {
+    0% {
+        color: #000;
+        transform: translateX(0);
+    }
+    20% {
+        transform: translateX(10px);
+    }
+    40% {
+        transform: translateX(-10px);
+    }
+    60% {
+        transform: translateX(10px);
+    }
+    80% {
+        transform: translateX(-10px);
+    }
+    100% {
+        color: #ff0000;
+        transform: translateX(0);
+    }
+}
+
+@keyframes animateCounterBoxSuccess {
+    0% {
+        color: #fff;
+        transform: translateX(0);
+        transform: scale(100%);
+    }
+    100% {
+        color: #2da32d;
+        transform: translateX(0);
+        transform: scale(101%);
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -30,15 +66,27 @@ body {
 
 .letter {
     flex: 1 1 100px;
-    padding: 0.5rem;
-    background: linear-gradient(135deg, rgb(255, 210, 128),rgb(199, 93, 93));
+    padding: 1rem 0.5rem;
+    background: linear-gradient(135deg, rgb(250, 225, 100), rgb(204, 183, 80));
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 10px;
-    box-shadow: 3px 5px 15px rgba(0,0,0,0.15);
+    box-shadow: inset 3px 5px 15px rgba(255,255,255,0.35), 3px 5px 15px rgba(0,0,0,0.15);
     transition: 300ms;
+    font-size: 1.25rem;
+}
+
+.letter.inactive {
+    pointer-events: none;
+    cursor: none;
+    filter: grayscale(100%);
+    box-shadow: inset 3px 5px 15px rgba(255,255,255,0.35), 3px 5px 15px rgba(0,0,0,0.15);
+}
+
+.letter:hover {
+    transform: scale(105%);
 }
 
 .letter:active {
@@ -46,19 +94,30 @@ body {
     transform: scale(95%);
 }
 
-.letter.inactive {
-    pointer-events: none;
-    cursor: none;
-    background: #fff;
-}
-
 .wanted-word {
     display: flex;
     gap: 10px;
     margin: 1rem 0;
     font-size: 2rem;
+    font-weight: 700;
 }
 
 .failure, .success {
     display: flex;
 }
+
+.animate-wrong-answer {
+    animation-name: animateCounterBoxFailure;
+    animation-duration: 500ms;
+}
+
+.animate-correct-answer {
+    animation-name: animateCounterBoxSuccess;
+    animation-duration: 500ms;
+}
+
+svg {
+            width: 300px;
+            height: 400px;
+        }
+

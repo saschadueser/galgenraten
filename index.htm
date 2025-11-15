@@ -25,15 +25,29 @@
 
     <!-- Counter Fehlversuche -->
     <div class="hintbox">
-    <div class="success">
-        <div>Gefundene Buchstaben:</div>
-        <div class="success-counter"></div>
+        <div class="failure">
+            <div>Fehlversuche:</div>
+            <div class="failure-counter"></div>
+        </div>
     </div>
-    <div class="failure">
-        <div>Fehlversuche:</div>
-        <div class="failure-counter"></div>
-    </div>
-    </div>
+
+
+<body>
+    <svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
+        <!-- Galgen -->
+        <line class="galgen" x1="50" y1="350" x2="250" y2="350" stroke="black" stroke-width="4"/> <!-- Boden -->
+        <line class="galgen" x1="100" y1="350" x2="100" y2="50" stroke="black" stroke-width="4"/> <!-- Pfosten -->
+        <line class="galgen" x1="100" y1="50" x2="200" y2="50" stroke="black" stroke-width="4"/> <!-- Querbalken -->
+        <line class="galgen" x1="200" y1="50" x2="200" y2="100" stroke="black" stroke-width="4"/> <!-- Seil -->
+
+        <!-- Galgenmännchen -->
+        <circle class="person" cx="200" cy="120" r="20" stroke="black" stroke-width="3" fill="none"/> <!-- Kopf -->
+        <line class="person" x1="200" y1="140" x2="200" y2="200" stroke="black" stroke-width="3"/> <!-- Körper -->
+        <line class="person" x1="200" y1="150" x2="170" y2="180" stroke="black" stroke-width="3"/> <!-- linker Arm -->
+        <line class="person" x1="200" y1="150" x2="230" y2="180" stroke="black" stroke-width="3"/> <!-- rechter Arm -->
+        <line class="person" x1="200" y1="200" x2="180" y2="240" stroke="black" stroke-width="3"/> <!-- linkes Bein -->
+        <line class="person" x1="200" y1="200" x2="220" y2="240" stroke="black" stroke-width="3"/> <!-- rechtes Bein -->
+    </svg>
 
     <script src="script.js"></script>
 </body>
